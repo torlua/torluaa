@@ -1,132 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>@yourname</title>
-  <link rel="icon" href="https://fav.farm/⚡" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      color: white;
-      background-color: black;
-      overflow: hidden;
-    }
-
-    /* Background video/gif */
-    #bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.5);
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .pfp {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 2px solid #00ff9f;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      margin: 10px 0;
-      font-size: 2.5rem;
-      color: #00ff9f;
-    }
-
-    .badges {
-      margin-bottom: 30px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #222;
-      color: #fff;
-      border: 1px solid #00ff9f;
-      padding: 4px 10px;
-      margin: 5px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-    }
-
-    .link {
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid #00ff9f;
-      border-radius: 10px;
-      color: white;
-      padding: 14px 25px;
-      margin: 8px 0;
-      text-decoration: none;
-      display: block;
-      width: 250px;
-      transition: 0.2s;
-    }
-
-    .link:hover {
-      background-color: #00ff9f;
-      color: #000;
-    }
-
-    audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      z-index: 2;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@yourname</title>
+<link rel="icon" href="https://fav.farm/🔫" />
+<style>
+  body {
+    margin:0;
+    padding:0;
+    background-color:#111;
+    font-family: "Inter", sans-serif;
+    color:white;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  /* Background: video or GIF */
+  #bg {
+    position: fixed;
+    z-index:-1;
+    top:0;left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    filter:brightness(0.4);
+  }
+  /* Profile card */
+  .card {
+    background: rgba(17,17,17,0.8);
+    border:1px solid #333;
+    border-radius:12px;
+    padding:40px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 4px 20px rgba(0,0,0,0.5);
+  }
+  .pfp {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:2px solid #555;
+    margin-bottom:20px;
+  }
+  h1 {
+    margin:0;
+    font-size:2rem;
+    letter-spacing:1px;
+    margin-bottom:15px;
+  }
+  .badges {
+    margin-bottom:20px;
+  }
+  .badge {
+    display:inline-block;
+    background:#222;
+    color:#fff;
+    border:1px solid #555;
+    border-radius:8px;
+    padding:3px 8px;
+    font-size:0.8rem;
+    margin:3px;
+  }
+  .links {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .link {
+    background:#222;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:1rem;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+  .link:hover {
+    background:#00afff;
+  }
+</style>
 </head>
 <body>
 
-  <!-- 🔊 Background Music (optional) -->
-  <audio autoplay loop>
-    <source src="https://yourdomain.com/music.mp3" type="audio/mp3">
-  </audio>
+<!-- 📹 Background video – use a GIF by swapping video for img -->
+<video id="bg" autoplay muted loop>
+  <source src="https://yourdomain.com/background.mp4" type="video/mp4">
+</video>
 
-  <!-- 🌠 Background Video or GIF -->
-  <video id="bg" autoplay loop muted>
-    <source src="https://yourdomain.com/bg.mp4" type="video/mp4">
-  </video>
-  <!-- For GIFs use:
-  <img id="bg" src="https://yourdomain.com/bg.gif" alt="bg" />
-  -->
-
-  <div class="container">
-    <img src="https://yourdomain.com/pfp.png" alt="Profile Picture" class="pfp" />
-    <h1>@yourname</h1>
-
-    <div class="badges">
-      <span class="badge">Developer</span>
-      <span class="badge">Roblox Scripter</span>
-      <span class="badge">13 y/o</span>
-      <span class="badge">🔧 HTML Wizard</span>
-    </div>
-
-    <a class="link" href="https://youtube.com/@yourchannel" target="_blank">📺 YouTube</a>
-    <a class="link" href="https://discord.gg/yourserver" target="_blank">💬 Discord</a>
-    <a class="link" href="https://roblox.com/users/yourid" target="_blank">🎮 Roblox</a>
-    <a class="link" href="https://github.com/yourname" target="_blank">💻 GitHub</a>
+<div class="card">
+  <img src="https://yourdomain.com/pfp.png" alt="Profile Picture" class="pfp">
+  <h1>@yourname</h1>
+  <div class="badges">
+    <span class="badge">Dev</span>
+    <span class="badge">Coder</span>
   </div>
+  <div class="links">
+    <a class="link" href="https://youtube.com" target="_blank">📺 YouTube</a>
+    <a class="link" href="https://discord.gg" target="_blank">💬 Discord</a>
+    <a class="link" href="https://github.com" target="_blank">💻 GitHub</a>
+  </div>
+</div>
 
 </body>
 </html>
