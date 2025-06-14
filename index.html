@@ -1,45 +1,45 @@
-// pages/[username].js
-export async function getServerSideProps(context) {
-  const username = context.params.username;
-  // Replace with real DB or API call
-  const profiles = {
-    dada: {
-      avatar: "/default-avatar.png",
-      bio: "I build cool stuff 🚀",
-      links: [
-        { label: "My Discord", url: "https://discord.gg/abc123" },
-        { label: "My Game", url: "https://roblox.com/mygame" },
-      ],
-    },
-  };
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Guns.lol Clone</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; }
+    input, button { padding: 10px; margin: 10px; width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Create Your Link</h1>
+  <input id="custom" placeholder="yourname (e.g., dada)" /><br>
+  <input id="url" placeholder="https://example.com" /><br>
+  <button onclick="createLink()">Create Link</button>
 
-  const profile = profiles[username] || null;
+  <p id="result"></p>
 
-  return { props: { profile, username } };
-}
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-export default function UserPage({ profile, username }) {
-  if (!profile) return <h1>User not found</h1>;
+    const firebaseConfig = {
+      apiKey: "YOUR_FIREBASE_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <img src={profile.avatar} width="100" style={{ borderRadius: "50%" }} />
-      <h2>@{username}</h2>
-      <p>{profile.bio}</p>
-      {profile.links.map((link, i) => (
-        <a key={i} href={link.url} style={{
-          display: "block",
-          margin: "10px auto",
-          padding: "10px 20px",
-          background: "#111",
-          color: "#fff",
-          borderRadius: "10px",
-          width: "200px",
-          textDecoration: "none"
-        }}>
-          {link.label}
-        </a>
-      ))}
-    </div>
-  );
-}
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    window.createLink = () => {
+      const custom = document.getElementById('custom').value;
+      const url = document.getElementById('url').value;
+      if (!custom || !url) return alert("Please fill both fields.");
+      set(ref(db, 'links/' + custom), { url }).then(() => {
+        document.getElementById('result').innerText = `Your link: https://yourdomain.com/${custom}`;
+      });
+    };
+  </script>
+</body>
+</html>
