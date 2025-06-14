@@ -2,52 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@yourname</title>
-  <link rel="icon" href="https://fav.farm/🔥">
+  <link rel="icon" href="https://fav.farm/⚡" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #0f0f0f;
-      color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Segoe UI", sans-serif;
+      color: white;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    /* Background video/gif */
+    #bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      text-align: center;
+    }
+
+    .pfp {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #00ff9f;
+      margin-bottom: 20px;
     }
 
     h1 {
+      margin: 10px 0;
       font-size: 2.5rem;
-      margin-bottom: 40px;
       color: #00ff9f;
     }
 
+    .badges {
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      border: 1px solid #00ff9f;
+      padding: 4px 10px;
+      margin: 5px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+
     .link {
-      background: #1a1a1a;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #00ff9f;
+      border-radius: 10px;
       color: white;
-      padding: 15px 30px;
-      border-radius: 8px;
-      margin: 10px;
+      padding: 14px 25px;
+      margin: 8px 0;
       text-decoration: none;
-      transition: all 0.2s ease-in-out;
-      width: 260px;
-      text-align: center;
+      display: block;
+      width: 250px;
+      transition: 0.2s;
     }
 
     .link:hover {
       background-color: #00ff9f;
-      color: #0f0f0f;
+      color: #000;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <h1>@yourname</h1>
-  <a class="link" href="https://youtube.com/@yourchannel" target="_blank">📺 YouTube</a>
-  <a class="link" href="https://discord.gg/yourserver" target="_blank">💬 Discord</a>
-  <a class="link" href="https://roblox.com/users/yourid" target="_blank">🎮 Roblox</a>
-  <a class="link" href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+
+  <!-- 🔊 Background Music (optional) -->
+  <audio autoplay loop>
+    <source src="https://yourdomain.com/music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- 🌠 Background Video or GIF -->
+  <video id="bg" autoplay loop muted>
+    <source src="https://yourdomain.com/bg.mp4" type="video/mp4">
+  </video>
+  <!-- For GIFs use:
+  <img id="bg" src="https://yourdomain.com/bg.gif" alt="bg" />
+  -->
+
+  <div class="container">
+    <img src="https://yourdomain.com/pfp.png" alt="Profile Picture" class="pfp" />
+    <h1>@yourname</h1>
+
+    <div class="badges">
+      <span class="badge">Developer</span>
+      <span class="badge">Roblox Scripter</span>
+      <span class="badge">13 y/o</span>
+      <span class="badge">🔧 HTML Wizard</span>
+    </div>
+
+    <a class="link" href="https://youtube.com/@yourchannel" target="_blank">📺 YouTube</a>
+    <a class="link" href="https://discord.gg/yourserver" target="_blank">💬 Discord</a>
+    <a class="link" href="https://roblox.com/users/yourid" target="_blank">🎮 Roblox</a>
+    <a class="link" href="https://github.com/yourname" target="_blank">💻 GitHub</a>
+  </div>
+
 </body>
 </html>
