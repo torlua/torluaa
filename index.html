@@ -1,110 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>@yourname</title>
-<link rel="icon" href="https://fav.farm/🔫" />
-<style>
-  body {
-    margin:0;
-    padding:0;
-    background-color:#111;
-    font-family: "Inter", sans-serif;
-    color:white;
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  /* Background: video or GIF */
-  #bg {
-    position: fixed;
-    z-index:-1;
-    top:0;left:0;
-    width:100vw;
-    height:100vh;
-    object-fit:cover;
-    filter:brightness(0.4);
-  }
-  /* Profile card */
-  .card {
-    background: rgba(17,17,17,0.8);
-    border:1px solid #333;
-    border-radius:12px;
-    padding:40px;
-    width:320px;
-    text-align:center;
-    box-shadow:0 4px 20px rgba(0,0,0,0.5);
-  }
-  .pfp {
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    border:2px solid #555;
-    margin-bottom:20px;
-  }
-  h1 {
-    margin:0;
-    font-size:2rem;
-    letter-spacing:1px;
-    margin-bottom:15px;
-  }
-  .badges {
-    margin-bottom:20px;
-  }
-  .badge {
-    display:inline-block;
-    background:#222;
-    color:#fff;
-    border:1px solid #555;
-    border-radius:8px;
-    padding:3px 8px;
-    font-size:0.8rem;
-    margin:3px;
-  }
-  .links {
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  .link {
-    background:#222;
-    color:white;
-    padding:12px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:1rem;
-    transition:all .2s;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-  }
-  .link:hover {
-    background:#00afff;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@yourname</title>
+  <link rel="icon" href="https://fav.farm/🧠" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      font-family: "Inter", sans-serif;
+      color: white;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .card {
+      background: rgba(17, 17, 17, 0.8);
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 40px;
+      width: 330px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .pfp {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .badges {
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 4px 10px;
+      margin: 4px;
+      font-size: 0.85rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link {
+      background: #222;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .link:hover {
+      background: #00afff;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 📹 Background video – use a GIF by swapping video for img -->
+<!-- 🎧 Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.discordapp.com/attachments/111111111111111111/124999999999999999/WiFi_-_Skeleton_Bipolar.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🔄 Background video or GIF -->
 <video id="bg" autoplay muted loop>
   <source src="https://yourdomain.com/background.mp4" type="video/mp4">
 </video>
 
+<!-- 💳 Profile Card -->
 <div class="card">
-  <img src="https://yourdomain.com/pfp.png" alt="Profile Picture" class="pfp">
+  <img class="pfp" src="https://yourdomain.com/pfp.png" alt="PFP">
   <h1>@yourname</h1>
+
   <div class="badges">
-    <span class="badge">Dev</span>
-    <span class="badge">Coder</span>
+    <span class="badge">👑 Owner</span>
+    <span class="badge">🛠️ Staff</span>
+    <span class="badge">🚀 Booster</span>
+    <span class="badge">💸 Donator</span>
+    <span class="badge">✨ Premium</span>
+    <span class="badge">💻 Developer</span>
+    <span class="badge">🐞 Bug Finder</span>
   </div>
+
   <div class="links">
-    <a class="link" href="https://youtube.com" target="_blank">📺 YouTube</a>
-    <a class="link" href="https://discord.gg" target="_blank">💬 Discord</a>
-    <a class="link" href="https://github.com" target="_blank">💻 GitHub</a>
+    <a class="link" href="https://youtube.com/@yourchannel" target="_blank">📺 YouTube</a>
+    <a class="link" href="https://discord.gg/yourserver" target="_blank">💬 Discord</a>
+    <a class="link" href="https://roblox.com/users/yourid" target="_blank">🎮 Roblox</a>
+    <a class="link" href="https://github.com/yourname" target="_blank">💻 GitHub</a>
   </div>
 </div>
 
